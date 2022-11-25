@@ -1,0 +1,17 @@
+{
+  "name": "wdio-common",
+  "version": "1.0.0",
+  "description": "Common helpers and components for WDIO projects",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javicoin/wdio-common.git"
+  },
+  "author": "javicoin",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.7"
+  }
+}
