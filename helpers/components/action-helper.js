@@ -149,7 +149,6 @@ class ActionHelper {
         this.frStack = new Error().stack;
         await ActionHelper.waitForElementAndScroll(this, {waitForDisplayed, waitForStatic, timeout}, errorHandler);
         await origSetValueFunction(value).then(undefined, errorHandler);
-
     };
 
     /**

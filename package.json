@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/javicoin/wdio-common.git"
+    "url": "git+https://github.com/rsksmart/wdio-common.git"
   },
   "author": "javicoin",
   "license": "ISC",
