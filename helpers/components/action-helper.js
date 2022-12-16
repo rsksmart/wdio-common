@@ -116,7 +116,7 @@ class ActionHelper {
         this.frStack = new Error().stack;
         await ActionHelper.waitForElementAndScroll(this, {waitForDisplayed, waitForStatic, timeout}, errorHandler);
         await origClickFunction().then(undefined, errorHandler);
-        if (timeout > 0)
+        if (pauseTimeout > 0)
             await ActionHelper.pause({pauseTimeout});
     }
     
