@@ -1,5 +1,7 @@
 // This class is deprecated and just used for future possible functionalities
 require('chai').should();
+const {timeouts, WaitHelper} = require('../utils/wait-helper');
+const waitHelper = new WaitHelper();
 
 const SELECTORS = {
     ANDROID: {
@@ -22,6 +24,22 @@ class NativeAlert {
         });
         (await driver.getAlertText()).should.equal(alertTitle);
     }
+
+    /**
+     * Waits for specific popup to exist and dismisses it
+     * @param {String} locator - locator to close the popup
+     */
+    static async dismissPopup(locator) {
+		if (driver.isAndroid) {
+            const element = $(locator);
+            try{
+                await waitHelper.waitForDisplayed(element, timeouts.S2);
+                await element.click();
+            } catch(error) {
+                console.warn('The popup was not displayed');
+            }
+		}
+	}
 }
 
 module.exports = NativeAlert;
