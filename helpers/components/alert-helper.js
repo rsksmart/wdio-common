@@ -28,12 +28,13 @@ class NativeAlert {
     /**
      * Waits for specific popup to exist and dismisses it
      * @param {String} locator - locator to close the popup
+     * @param {number} timeout - timeout to wait for the popup to appear
      */
-    static async dismissPopup(locator) {
+    static async dismissPopup(locator, timeout = timeouts.S3) {
 		if (driver.isAndroid) {
             const element = $(locator);
             try{
-                await waitHelper.waitForDisplayed(element, timeouts.S2);
+                await waitHelper.waitForDisplayed(element, timeout);
                 await element.click();
             } catch(error) {
                 console.warn('The popup was not displayed');
