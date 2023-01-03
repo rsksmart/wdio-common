@@ -39,7 +39,7 @@ class FilesHelper {
      * @param {string} directory - path to backup directory
      * @param {boolean} cleanup - wether to empty the directory or not
      */
-    static prepareBackupDirectory(directory, cleanup) {
+    static prepareBackupDirectory(directory, cleanup = false) {
         if (fs.existsSync(directory)) {
             if (cleanup) {
                 console.log(`Cleaning existing backup directory: ${directory}`);
