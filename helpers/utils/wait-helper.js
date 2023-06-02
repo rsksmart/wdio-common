@@ -236,14 +236,15 @@ class WaitHelper {
      *  Handles need to be sent as an integer number e.g. await browser.getWindowHandles().length
      * 
      * @param {number} [handles = 1] - Number of window handles open at the moment of waiting for a new tab
+     * @param {number} [timeout = timeouts.S5] - time to wait
      */
-    async waitForNewTab(handles = 1){
+    async waitForNewTab(handles = 1, timeout = timeouts.S5){
 		await browser.waitUntil(
-			async function (){
+			async function () {
 				const openTabs = await browser.getWindowHandles();
 				return ( openTabs.length > handles ) ; },
 			{
-				timeout: timeouts.S5,
+				timeout: timeout,
 				timeoutMsg: 'Failed while waiting for New Tab'
 			}
 		);
@@ -251,13 +252,16 @@ class WaitHelper {
 
     /**
      * Waits for an Alert to be displayed
+     * @param {number} [timeout = timeouts.S3] - time to wait
      * 
      */
-    async waitForAlert(){
+    async waitForAlert(timeout = timeouts.S3){
 		await browser.waitUntil(
-			async function (){ return ( await browser.isAlertOpen() ) ; },
+			async function (){ 
+                return ( await browser.isAlertOpen() ) ; 
+            },
 			{
-				timeout: timeouts.S3,
+				timeout: timeout,
 				timeoutMsg: 'Failed while waiting for Alert to show up'
 			}
 		);
