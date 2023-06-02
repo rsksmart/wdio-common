@@ -229,6 +229,41 @@ class WaitHelper {
             `${message}. LOCATOR: ${element.locator().value} \n ${new Error().stack}`
         );
     }
+
+    /**
+     * Waits for a new tab to be loaded by considering an increment of 1 to the list of window handles
+     * @param {number} [timeout=timeouts.S5] - time to wait
+     * 
+     */
+    async waitForNewTab(timeout = timeouts.S5){
+		await browser.waitUntil(
+			async function () {
+				const openTabs = await browser.getWindowHandles();
+				return ( openTabs.length > 1 ) ; 
+            },
+			{
+				timeout: timeout,
+				timeoutMsg: 'Failed while waiting for New Tab'
+			}
+		);
+	}
+
+    /**
+     * Waits for an Alert to be displayed
+     * @param {number} [timeout=timeouts.S3] - time to wait
+     * 
+     */
+    async waitForAlert(timeout = timeouts.S3){
+		await browser.waitUntil(
+			async function (){ 
+                return ( await browser.isAlertOpen() ) ; 
+            },
+			{
+				timeout: timeout,
+				timeoutMsg: 'Failed while waiting for Alert to show up'
+			}
+		);
+	}
 }
 
 module.exports = {
