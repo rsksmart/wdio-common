@@ -231,14 +231,17 @@ class WaitHelper {
     }
 
     /**
-     *  Waits for a new tab to be loaded by considering an increment of 1 to the list of window handles
+     *  Waits for a new tab to be loaded by considering an increment of 1 to the list of window handles if
+     *  no parameter is sent then the method will wait for the second tab to be open
+     *  Handles need to be sent as an integer number e.g. await browser.getWindowHandles().length
      * 
+     * @param {number} [handles = 1] - Number of window handles open at the moment of waiting for a new tab
      */
-    async waitForNewTab(){
+    async waitForNewTab(handles = 1){
 		await browser.waitUntil(
 			async function (){
 				const openTabs = await browser.getWindowHandles();
-				return ( openTabs.length > 1 ) ; },
+				return ( openTabs.length > handles ) ; },
 			{
 				timeout: timeouts.S5,
 				timeoutMsg: 'Failed while waiting for New Tab'
