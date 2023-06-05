@@ -241,11 +241,9 @@ class WaitHelper {
     async waitForNewTab(handles = 1, timeout = timeouts.S5){
 		await browser.waitUntil(
 			async function () {
-			async function () {
 				const openTabs = await browser.getWindowHandles();
 				return (openTabs.length > handles); },
 			{
-				timeout: timeout,
 				timeout: timeout,
 				timeoutMsg: 'Failed while waiting for New Tab'
 			}
@@ -264,9 +262,9 @@ class WaitHelper {
                 return ( await browser.isAlertOpen() ) ; 
             },
 			async function (){ 
-                return (await browser.isAlertOpen()); },
+                return ( await browser.isAlertOpen() ) ; 
+            },
 			{
-				timeout: timeout,
 				timeout: timeout,
 				timeoutMsg: 'Failed while waiting for Alert to show up'
 			}
