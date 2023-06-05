@@ -234,7 +234,6 @@ class WaitHelper {
      *  Waits for a new tab to be loaded by considering an increment of 1 to the list of window handles if
      *  no parameter is sent then the method will wait for the second tab to be open
      *  Handles need to be sent as an integer number e.g. await browser.getWindowHandles().length
-     * 
      * @param {number} [handles = 1] - Number of window handles open at the moment of waiting for a new tab
      * @param {number} [timeout = timeouts.S5] - time to wait
      */
