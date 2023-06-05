@@ -256,7 +256,6 @@ class WaitHelper {
      * 
      */
     async waitForAlert(timeout = timeouts.S3){
-    async waitForAlert(timeout = timeouts.S3){
 		await browser.waitUntil(
 			async function (){ 
                 return ( await browser.isAlertOpen() ) ; 
