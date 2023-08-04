@@ -1,0 +1,53 @@
+{
+  "env": {
+    "es2020": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "browser": true,
+    "driver": true,
+    "$": true,
+    "$$": true,
+    "expect": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "rules": {
+    "no-console": "warn",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 130,
+        "ignorePattern": "get "
+      }
+    ],
+    "indent": [
+      "error",
+      "tab"
+    ],
+    "arrow-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "array-bracket-newline": [
+      "error",
+      "consistent"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
+  }
+}

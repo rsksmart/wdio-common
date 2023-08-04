@@ -9,3 +9,15 @@ node_modules/
 
 # Optional eslint cache
 .eslintcache
+
+# Config
+config/*.conf.js
+config/*.json5
+.vscode
+
+# Cucumber features & steps
+features
+
+#logs
+driver-logs
+reports

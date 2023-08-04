@@ -1,17 +1,32 @@
 {
   "name": "wdio-common",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Common helpers and components for WDIO projects",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:chrome": "wdio config/chrome.conf.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rsksmart/wdio-common.git"
   },
-  "author": "javicoin",
+  "author": "IOV Labs QA Team",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^4.3.7"
+    "chai": "^4.3.7",
+
+
+    "chromedriver": "^114.0.2",
+    "config": "^3.3.9",
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/register": "^7.22.5",    
+    "@wdio/cli": "^8.14.4",
+    "@wdio/cucumber-framework": "^8.14.0",
+    "@wdio/local-runner": "^8.14.3",
+    "eslint": "^8.28.0",
+    "wdio-chromedriver-service": "^8.1.1",
+    "webdriverio": "^8.14.3",
+    "wdio-cucumberjs-json-reporter": "^5.1.6"
   }
 }
