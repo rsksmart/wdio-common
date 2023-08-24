@@ -209,6 +209,20 @@ class ActionHelper {
         await browser.addCommand('getElementsText', this.getElementsText, true);
         await browser.addCommand('getElementsAttribute', this.getElementsAttribute, true);
     }
+
+    /**
+     * This method work to scroll forward horizontally in android
+     */
+    static async scrollForward() {
+        await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollForward()');
+    }
+
+    /**
+     * This method work to scroll Backward horizontally in android
+     */
+    static async scrollBackward() {
+        await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollBackward()');
+    }
 }
 
 module.exports = ActionHelper;
